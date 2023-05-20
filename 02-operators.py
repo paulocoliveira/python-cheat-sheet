@@ -84,22 +84,22 @@ y = 10
 result = x <= y
 print(result)  # Output: True
 
-#Logial Operators: And
+#Logical Operators: And
 
-x = 5
-y = 10
-result = (x > 0) and (y < 15)
+selenium_version = 4.9
+python_version = 3.11
+result = (selenium_version > 4) and (python_version > 3)
 print(result)  # Output: True
 
-#Logial Operators: Or
+#Logical Operators: Or
 
-x = 5
-y = 20
-result = (x > 10) or (y < 15)
+selenium_version = 4.9
+python_version = 3.11
+result = (selenium_version > 5) or (python_version < 3)
 print(result)  # Output: False
 
-#Logial Operators: Not
+#Logical Operators: Not
 
-x = 5
-result = not(x > 10)
+selenium_version = 4.9
+result = not(selenium_version > 5)
 print(result)  # Output: True

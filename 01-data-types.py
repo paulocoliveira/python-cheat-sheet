@@ -31,68 +31,123 @@ is_sunny = False
 
 #Lists
 
-numbers = [1, 2, 3, 4, 5]
-fruits = ["orange", "strawberry", "banana"]
-mixed_list = [5, "banana", False, 3.14]
+test_cases = ["login", "register", "search", "checkout"]
 
-#List Access
+usernames = ["user1", "user2", "user3"]
+passwords = ["pass123", "pass456", "pass789"]
 
-print(fruits[0])  # Output: orange
+#List Operations
 
-#Lists are mutable
+test_cases = ["login", "register", "search"]
+test_cases.append("checkout")
+print(test_cases) # Output: ['login', 'register', 'search', 'checkout']
 
-fruits[0] = "guava"
-print(fruits)  # Output: ['guava', 'strawberry', 'banana']
-
-fruits.append("grape")
-print(fruits)  # Output: ['guava', 'strawberry', 'banana', 'grape']
-
-fruits.remove("banana")
-print(fruits)  # Output: ['guava', 'strawberry', 'grape']
+test_cases.remove("register")
+print(test_cases) # Output: ['login', 'search', 'checkout']
 
 #Tuples
 
-person = ("Paulo", 39, "Portugal")
+test_case = ("login", "user1", "pass123", True)
+
+credentials = (
+    ("admin", "admin123"),
+    ("user", "user123"),
+    ("guest", "guest123")
+)
 
 #Tuples Access
 
-print(person[0])  # Output: Paulo
+test_case = ("login", "user1", "pass123", True)
+print(test_case[0])  # Output: login
+
+#Tuple Subset
+
+credentials = ("admin", "user", "guest", "tester")
+print(credentials[1:3])  # Output: ("user", "guest")
+
+#Tuple Unpack
+
+user, password = ("admin", "admin123")
+print(user)      # Output: admin
+print(password)  # Output: admin123
 
 #Sets
 
-fruits = {"apple", "banana", "strawberry", "banana"}
-print(fruits)  # Output: {'strawberry', 'banana', 'apple'}
+test_tags = {"smoke", "regression", "functional"}
+test_case_1_tags = {"smoke", "regression"}
+test_case_2_tags = {"functional", "performance"}
 
-#Set Operations
+#Set Operations: Union
 
-set1 = {1, 2, 3}
-set2 = {2, 3, 4}
+test_tags = {"smoke", "regression"}
+additional_tags = {"functional", "performance"}
 
-union = set1 | set2
-print(union)  # Output: {1, 2, 3, 4}
+all_tags = test_tags.union(additional_tags)
+print(all_tags)  # Output: {"smoke", "regression", "functional", "performance"}
 
-intersection = set1 & set2
-print(intersection)  # Output: {2, 3}
+#Set Operations: Intersection
 
-difference = set1 - set2
-print(difference)  # Output: {1}
+test_tags = {"smoke", "regression", "functional"}
+selected_tags = {"functional", "performance"}
+
+common_tags = test_tags.intersection(selected_tags)
+print(common_tags)  # Output: {"functional"}
+
+#Set Operations: Difference
+
+test_tags = {"smoke", "regression", "functional"}
+excluded_tags = {"regression", "performance"}
+
+remaining_tags = test_tags.difference(excluded_tags)
+print(remaining_tags)  # Output: {"smoke", "functional"}
+
+#Set membership tests and operations
+
+test_tags = {"smoke", "regression", "functional"}
+
+print("regression" in test_tags)  # Output: True
+print({"functional", "performance"}.issubset(test_tags))  # Output: False
+print({"functional", "performance"}.isdisjoint(test_tags))  # Output: True
 
 #Dictionaries
 
-student = {"name": "Paulo", "age": 39, "grade": "A"}
+test_case_1 = {
+    "name": "Login",
+    "input": {"username": "testuser", "password": "password123"},
+    "expected_output": "Success",
+    "tags": ["smoke", "regression"]
+}
 
+test_environment = {
+    "url": "https://example.com",
+    "browser": "Chrome",
+    "timeout": 10,
+    "headless": True
+}
 
-#Dictionaries Access
+test_data = {
+    "TC001": {"input": 5, "expected_output": 25},
+    "TC002": {"input": 10, "expected_output": 100},
+    "TC003": {"input": -2, "expected_output": 4}
+}
 
-print(student["name"])  # Output: Paulo
+test_results = {
+    "TC001": "Pass",
+    "TC002": "Fail",
+    "TC003": "Pass"
+}
 
-#Dictionaries are mutable
+#Dictionaries Access and Manipulation
 
-student["grade"] = "B"
-print(student)  # Output: {'name': 'Paulo', 'age': 39, 'grade': 'B'}
+test_case = {"name": "Login", "status": "Pass", "tags": ["smoke", "regression"]}
 
-student["country"] = "Portugal"
-print(student)  # Output: {'name': 'Paulo', 'age': 39, 'grade': 'B', 'country': 'Portugal'}
+print(test_case["name"])  # Output: "Login"
 
-del student["age"]
-print(student)  # Output: {'name': 'Paulo', 'grade': 'B', 'country': 'Portugal'}
+test_case["status"] = "Fail"
+print(test_case)  # Output: {"name": "Login", "status": "Fail", "tags": ["smoke", "regression"]}
+
+test_case["timeout"] = 10
+print(test_case)  # Output: {"name": "Login", "status": "Fail", "tags": ["smoke", "regression"], "timeout": 10}
+
+del test_case["tags"]
+print(test_case)  # Output: {"name": "Login", "status": "Fail", "timeout": 10}

@@ -1,29 +1,29 @@
 #Conditional Statement: Basic example if-else
 
-number = int(input("Enter a number: "))
+selenium_version = float(input("Enter your selenium version: "))
 
-if number > 0:
-    print("The number is positive.")
+
+if selenium_version >= 4:
+    print("Your selenium version is updated.")
 else:
-    print("The number is negative.")
+    print("Your selenium version is deprecated.")
 
 #Conditional Statement: Basic example if-elif
 
-number = int(input("Enter a number: "))
+selenium_version = float(input("Enter your selenium version: "))
 
-if number > 0:
-    print("The number is positive.")
-elif number == 0:
-    print("The number is zero.")
+if selenium_version == 4.9:
+    print("Your selenium version is the latest.")
+elif selenium_version >= 4:
+    print("Your selenium version is updated.")
 else:
-    print("The number is negative.")
+    print("Your selenium version is deprecated.")
 
-#Loops: Basic for example
-
+#Loops: For basic example
 for number in range(1, 6):
     print(number)
 
-#Loops: Basic while example
+#Loops: While factorial example
 
 number = int(input("Enter a number: "))
 factorial = 1
