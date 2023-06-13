@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.2 (Python 3.11.3 on win32)" generated="20230603 14:40:52.172" rpa="false" schemaversion="3">
+<suite id="s1" name="Robot-Framework" source="C:\Github\python-cheat-sheet\robot-framework">
+<suite id="s1-s1" name="Todo App" source="C:\Github\python-cheat-sheet\robot-framework\todo_app.robot">
+<test id="s1-s1-t1" name="Verify Todo App Functionality" line="7">
+<kw name="Open test browser" library="common" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>https://lambdatest.github.io/sample-todo-app/</arg>
+<arg>remote_url=${REMOTE_URL}</arg>
+<arg>desired_capabilities=${CAPABILITIES}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230603 14:40:52.651" level="INFO">Opening browser 'firefox' to base url 'https://lambdatest.github.io/sample-todo-app/' through remote server at 'http://paulocol:8Yl2j4huUuLPcQIkt54LrxujI0Of43g1vZaSAbBiCi8FRMdi7Y@hub.lambdatest.com/wd/hub'.</msg>
+<status status="PASS" starttime="20230603 14:40:52.649" endtime="20230603 14:41:00.441"/>
+</kw>
+<status status="PASS" starttime="20230603 14:40:52.649" endtime="20230603 14:41:00.441"/>
+</kw>
+<kw name="Get WebElement" library="SeleniumLibrary">
+<var>${checkbox}</var>
+<arg>name=li1</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<msg timestamp="20230603 14:41:00.624" level="INFO">${checkbox} = &lt;selenium.webdriver.remote.webelement.WebElement (session="d1ac1713abc0567dda8c20e287d6b67f", element="62B15518C40AA567F83E25F102942F49_element_4")&gt;</msg>
+<status status="PASS" starttime="20230603 14:41:00.443" endtime="20230603 14:41:00.624"/>
+</kw>
+<kw name="Select Checkbox" library="SeleniumLibrary">
+<arg>${checkbox}</arg>
+<doc>Selects the checkbox identified by ``locator``.</doc>
+<msg timestamp="20230603 14:41:00.627" level="INFO">Selecting checkbox '&lt;selenium.webdriver.remote.webelement.WebElement (session="d1ac1713abc0567dda8c20e287d6b67f", element="62B15518C40AA567F83E25F102942F49_element_4")&gt;'.</msg>
+<status status="PASS" starttime="20230603 14:41:00.625" endtime="20230603 14:41:00.990"/>
+</kw>
+<kw name="Checkbox Should Be Selected" library="SeleniumLibrary">
+<arg>${checkbox}</arg>
+<doc>Verifies checkbox ``locator`` is selected/checked.</doc>
+<msg timestamp="20230603 14:41:00.993" level="INFO">Verifying checkbox '&lt;selenium.webdriver.remote.webelement.WebElement (session="d1ac1713abc0567dda8c20e287d6b67f", element="62B15518C40AA567F83E25F102942F49_element_4")&gt;' is selected.</msg>
+<status status="PASS" starttime="20230603 14:41:00.991" endtime="20230603 14:41:01.138"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=sampletodotext</arg>
+<arg>New Item</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230603 14:41:01.139" level="INFO">Typing text 'New Item' into text field 'id=sampletodotext'.</msg>
+<status status="PASS" starttime="20230603 14:41:01.138" endtime="20230603 14:41:01.712"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>id=addbutton</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230603 14:41:01.715" level="INFO">Clicking button 'id=addbutton'.</msg>
+<status status="PASS" starttime="20230603 14:41:01.713" endtime="20230603 14:41:02.232"/>
+</kw>
+<kw name="Get WebElements" library="SeleniumLibrary">
+<var>${todos}</var>
+<arg>css=ul.list-unstyled li</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<msg timestamp="20230603 14:41:02.385" level="INFO">${todos} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="d1ac1713abc0567dda8c20e287d6b67f", element="62B15518C40AA567F83E25F102942F49_element_7")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement ...</msg>
+<status status="PASS" starttime="20230603 14:41:02.233" endtime="20230603 14:41:02.385"/>
+</kw>
+<kw name="Length Should Be" library="BuiltIn">
+<arg>${todos}</arg>
+<arg>6</arg>
+<doc>Verifies that the length of the given item is correct.</doc>
+<msg timestamp="20230603 14:41:02.387" level="INFO">Length is 6</msg>
+<status status="PASS" starttime="20230603 14:41:02.386" endtime="20230603 14:41:02.387"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230603 14:41:02.388" endtime="20230603 14:41:02.791"/>
+</kw>
+<kw name="Close test browser" library="common" type="TEARDOWN">
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20230603 14:41:02.794" endtime="20230603 14:41:02.795"/>
+</kw>
+<status status="PASS" starttime="20230603 14:41:02.792" endtime="20230603 14:41:02.795"/>
+</kw>
+<status status="PASS" starttime="20230603 14:40:52.648" endtime="20230603 14:41:02.796"/>
+</test>
+<status status="PASS" starttime="20230603 14:40:52.229" endtime="20230603 14:41:02.800"/>
+</suite>
+<status status="PASS" starttime="20230603 14:40:52.176" endtime="20230603 14:41:02.806"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Robot-Framework">Robot-Framework</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Todo App">Robot-Framework.Todo App</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
